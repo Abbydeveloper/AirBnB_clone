@@ -1,0 +1,74 @@
+.filters {
+	background-color: white;
+	height: 70px;
+	width: 100%;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.filters button {
+	font-size: 18px;
+	background-color: #ff5a5f;
+	color: #ffffff;
+	height: 48px;
+	width: 20%;
+	border: unset;
+	border-radius: 4px.filters {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.filters button {
+  font-size: 18px;
+  background-color: #ff5a5f;
+  color: #ffffff;
+  height: 48px;
+  width: 20%;
+  border: unset;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: 30px;
+}
+.filters button:hover,
+.filters button:focus {
+  background-color: rgba(255, 90, 95, 0.9);
+  opacity: 90%;
+}
+
+.filters div.locations, 
+.filters div.amenities {
+        height: 100%;
+        width: 25%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+}       
+.filters > div:first-child {
+        border-right: 1px solid #dddddd;
+}       
+.filters div.locations > *,
+.filters div.amenities > * {
+        width: 70%;
+}
+.filters div .title {
+        font-weight: 600;
+        margin: 0;
+}
+.filters div .subtitle {
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0;
+};
