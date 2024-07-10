@@ -34,3 +34,9 @@ class BaseModel():
         dict_obj["created_at"] = self.created_at.strftime(time_format)
         dict_obj["updated_at"] = self.updated_at.strftime(time_format)
         return dict_obj
+
+    def __str__(self):
+        """Return print/str representation of the Base Model instance"""
+
+        classname self.__class__.__name__
+        return "[{}] ({}) {}".format(classname, self.id, self.__dict__)
