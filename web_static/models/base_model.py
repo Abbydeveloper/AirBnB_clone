@@ -21,7 +21,7 @@ class BaseModel():
     def save(self):
         """update the public instance attribute updated_at with the current
         datetime"""
-        self.updated_at = datetime.now()
+        self.update_at = datetime.now()
 
 
     def to_dict(self):
