@@ -38,5 +38,5 @@ class BaseModel():
     def __str__(self):
         """Return print/str representation of the Base Model instance"""
 
-        classname self.__class__.__name__
+        classname = self.__class__.__name__
         return "[{}] ({}) {}".format(classname, self.id, self.__dict__)
