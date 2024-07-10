@@ -18,17 +18,22 @@ class BaseModel():
         self.created_at = datetime.now()
         self.updated_at = self.created_at
 
+    def __str__(self):
+        """Return print/str representation of the Base Model instance"""
+
+        classname = self.__class__.__name__
+        return "[{}] ({}) {}".format(classname, self.id, self.__dict__)
+
     def to_dict(self):
-        """returns a dictionary containing all keys/values of __dict__ of the
-        instance"""
+        """Return a dictionary containing all keys/values of __dict__ of the
+        Base Model instance"""
         dict_obj = self.__dict__.copy()
         dict_obj["__class__"] = type(self).__name__
         dict_obj["created_at"] = self.created_at.strftime(time_format)
         dict_obj["updated_at"] = self.updated_at.strftime(time_format)
         return dict_obj
 
-    def __str__(self):
-        """Return print/str representation of the Base Model instance"""
-
-        classname = self.__class__.__name__
-        return "[{}] ({}) {}".format(classname, self.id, self.__dict__)
+    def save(self):
+        """Update the public instance attribute updated_at with the current
+        datetime"""
+        self.updated_at = datetime.now()
