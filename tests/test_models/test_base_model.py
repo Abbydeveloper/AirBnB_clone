@@ -5,6 +5,7 @@ import os
 import models
 import unittest
 from datetime import datetime
+from time import sleep
 from models.base_model import BaseModel
 
 
@@ -52,10 +53,10 @@ class Test_Base_Model(unittest.TestCase):
         self.assertTrue(type(base.to_dict()), dict)
 
         base = BaseModel()
-        self.assertIn(base.to_dict(), "id")
-        self.assertIn(base.to_dict(), "__class__")
-        self.assertIn(base.to_dict(), "created_at")
-        self.assertIn(base.to_dict(), "update_at")
+        self.assertIn("id", base.to_dict())
+        self.assertIn("__class__", base.to_dict())
+        self.assertIn("created_at", base.to_dict())
+        self.assertIn("updated_at", base.to_dict())
 
     def test_str(self):
         date = datetime.today()
