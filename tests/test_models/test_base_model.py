@@ -42,7 +42,7 @@ class Test_Base_Model(unittest.TestCase):
 
         base1 = BaseModel()
         sleep(0.05)
-        updated_at_1 = base.updated_at
+        updated_at_1 = base1.updated_at
         base1.save()
         self.assertLess(updated_at_1_, base1.updated_at)
 
