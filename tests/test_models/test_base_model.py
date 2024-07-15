@@ -4,7 +4,7 @@
 import os
 import models
 import unittest
-from datetime import datatime
+from datetime import datetime
 from models.base_model import BaseModel
 
 
