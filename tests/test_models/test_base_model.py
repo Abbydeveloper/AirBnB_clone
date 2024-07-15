@@ -44,7 +44,7 @@ class Test_Base_Model(unittest.TestCase):
         sleep(0.05)
         updated_at_1 = base1.updated_at
         base1.save()
-        self.assertLess(updated_at_1_, base1.updated_at)
+        self.assertLess(updated_at_1, base1.updated_at)
 
     def test_to_dict(self):
         """Unittests for to_dict method"""
