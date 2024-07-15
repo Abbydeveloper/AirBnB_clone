@@ -14,8 +14,8 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_base_model_unittest(self):
         self.assertEqual(type(BaseModel()), BaseModel)
-        self.assertEqual(type(BaseModal().created_at), datetime)
-        self.assertEqual(type(BaseModal().updated_at), datetime)
+        self.assertEqual(type(BaseModel().created_at), datetime)
+        self.assertEqual(type(BaseModel().updated_at), datetime)
 
         base1 = BaseModel()
         base2 = BaseModel()
@@ -39,7 +39,7 @@ class Test_Base_Model(unittest.TestCase):
         """
         Unittests for testing save method"""
 
-        base1 = BaseMOdel()
+        base1 = BaseModel()
         sleep(0.05)
         updated_at_1 = base.updated_at
         base1.save()
