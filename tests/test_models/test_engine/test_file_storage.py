@@ -65,4 +65,3 @@ class Test_engine(unittest.TestCase):
         with open("file.json", mode="r") as f:
             save_text = f.read()
             self.assertIn("BaseModel." + base.id, save_text)
-    def test_new(self):
