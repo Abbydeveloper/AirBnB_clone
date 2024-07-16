@@ -56,7 +56,7 @@ class Test_engine(unittest.TestCase):
 
     def test_new(self):
         base = BaseModel()
-        models.storage = new(base)
+        models.storage.new(base)
         self.assertIn("BaseModel." + base.id, models.storage.all().keys())
 
     def test_save(self):
