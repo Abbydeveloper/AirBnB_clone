@@ -37,9 +37,9 @@ class BaseModel():
         dict_obj = self.__dict__.copy()
         dict_obj["__class__"] = type(self).__name__
         created = datetime.strptime(self.created_at, time_format)
-        dict_obj["created_at"] = created.strftime(time_format)
+        dict_obj["created_at"] = (self.created_at).strftime(time_format)
         updated = datetime.strptime(self.updated_at, time_format)
-        dict_obj["updated_at"] = updated.strftime(time_format)
+        dict_obj["updated_at"] = (self.updated_at).strftime(time_format)
         return dict_obj
 
     def save(self):
