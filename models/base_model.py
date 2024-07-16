@@ -20,7 +20,7 @@ class BaseModel():
 
         if len(kwargs) != 0:
             for key, value in kwargs.items():
-                if key == "created_at" or key == ":updated_at":
+                if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, time_format)
                 else:
                     self.__dict__[key] = value
@@ -37,7 +37,7 @@ class BaseModel():
         """Return a dictionary containing all keys/values of __dict__ of the
         Base Model instance"""
         dict_obj = self.__dict__.copy()
-        dict_obj["created_at"] = self.created_at.isoformat()
+        dict_obj["created_at"] = self.created_at.strftime(time_format)
         dict_obj["updated_at"] = self.updated_at.strftime(time_format)
         dict_obj["__class__"] = self.__class__.__name__
         return dict_obj
