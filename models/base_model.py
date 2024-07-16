@@ -36,8 +36,8 @@ class BaseModel():
         Base Model instance"""
         dict_obj = self.__dict__.copy()
         dict_obj["__class__"] = type(self).__name__
-        dict_obj["created_at"] = self.created_at.strftime(time_format)
-        dict_obj["updated_at"] = self.updated_at.strftime(time_format)
+        dict_obj["created_at"] = self.created_at.strptime(time_format)
+        dict_obj["updated_at"] = self.updated_at.strptime(time_format)
         return dict_obj
 
     def save(self):
