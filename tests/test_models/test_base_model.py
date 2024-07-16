@@ -43,6 +43,7 @@ class Test_Base_Model(unittest.TestCase):
         base1 = BaseModel()
         sleep(0.05)
         updated_at_1 = base1.updated_at
+        self.assertEqual(updated_at_1, datetime.utcnow())
         base1.save()
         updated_at_2 = base1.updated_at
         self.assertLess(updated_at_1, updated_at_2)
