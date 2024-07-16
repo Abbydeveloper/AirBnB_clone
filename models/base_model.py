@@ -16,7 +16,7 @@ class BaseModel():
 
         self.id = str(uuid.uuid4())
         self.created_at = datetime.today()
-        self.updated_at = self.created_at
+        self.updated_at = datetime.today()
 
         if len(kwargs) != 0:
             for key, value in kwargs.items():
@@ -36,8 +36,9 @@ class BaseModel():
         Base Model instance"""
         dict_obj = self.__dict__.copy()
         dict_obj["__class__"] = type(self).__name__
-        dict_obj["created_at"] = self.created_at
-        dict_obj["updated_at"] = self.updated_at
+        dict_obj["created_at"] = datetime.strptime(self.created_at,_time_format).
+        strftime(time_format)
+        dict_obj["updated_at"] = self.updated_at.strftime(time_format)
         return dict_obj
 
     def save(self):
