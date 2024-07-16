@@ -36,7 +36,7 @@ class BaseModel():
         Base Model instance"""
         dict_obj = self.__dict__.copy()
         dict_obj["__class__"] = type(self).__name__
-        dict_obj["created_at"] = datetime.strptime(self.created_at,_time_format).
+        dict_obj["created_at"] = datetime.strptime(self.created_at, time_format).
         strftime(time_format)
         dict_obj["updated_at"] = self.updated_at.strftime(time_format)
         return dict_obj
