@@ -32,12 +32,11 @@ class HBNBCommand(cmd.Cmd):
 
         if arg == "" or arg is None:
             print("** class name missing **")
-        elif len(arg) > 0 and arg[0] not in HBNBCommand.__classes:
+        elif arg not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
-            instance = storage.classes()[arg]()
-            instance.save()
-            print(instance.id)
+            storage.save()
+            print(eval(arg)().id)
 
     def do_show(self, arg):
         """Print the string representation of an instance"""
