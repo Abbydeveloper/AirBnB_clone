@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
         """Print the string representation of an instance"""
         if arg == "" or arg is None:
             print("** class name is missing **")
-        elif:
+        else:
             sub_arg = arg.split(" ")
             if sub_arg[0] not in storage.classes():
                 print("&& class doesn't exist **")
