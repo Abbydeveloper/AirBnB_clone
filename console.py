@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             sub_arg = arg.split(" ")
-            if sub_arg = arg.split(" "):
+            if sub_ar[0] not in storage.classes():
                 print("** class doesn't exist **")
             elif len(sub_arg) < 2:
                 print("** instance id missing **")
@@ -72,14 +72,14 @@ class HBNBCommand(cmd.Cmd):
                 if pattern not in storage.all():
                     print("** not instance found **")
                 else:
-                    del storage.all(){pattern]
+                    del storage.all()[pattern]
                     storage.save()
 
     def do_all(self, arg):
         """Print all string representation of an instance"""
 
         if arg != "":
-            sub_arg = line.split(" ")
+            sub_arg = arg.split(" ")
             if sub_arg[0] not in storage.classes():
                 print("** class doesn't exist **")
             else:
@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
                         if type(obj).__name__ == sub_arg[0]]
                 print(new)
         else:
-            f_list = [str(obj) for pattern, obj in storage.all().items()]]
+            f_list = [str(obj) for pattern, obj in storage.all().items()]
             print(f_list)
 
 if __name__ == "__main__":
