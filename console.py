@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
 
         if arg == "" or arg is None:
             print("** class name missing **")
-        elif arg not in storage.classes():
+        elif len(arg) > 0 and arg[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
             instance = storage.classes()[arg]()
@@ -45,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name is missing **")
         else:
             sub_arg = arg.split(" ")
-            if sub_arg[0] not in storage.classes():
+            if sub_arg[0] not in HBNBCommand.__classes:
                 print("&& class doesn't exist **")
             elif len(sub_arg) < 2:
                 print("** instance id missing **")
@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             sub_arg = arg.split(" ")
-            if sub_ar[0] not in storage.classes():
+            if sub_arg[0] not in HBNBCommand.__classes:
                 print("** class doesn't exist **")
             elif len(sub_arg) < 2:
                 print("** instance id missing **")
@@ -80,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
 
         if arg != "":
             sub_arg = arg.split(" ")
-            if sub_arg[0] not in storage.classes():
+            if sub_arg[0] not in HBNBCommand.__classes:
                 print("** class doesn't exist **")
             else:
                 new = [str(obj) for patter, obj in storge.all().items()
