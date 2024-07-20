@@ -82,7 +82,7 @@ class HBNBCommand(cmd.Cmd):
             if sub_arg[0] not in HBNBCommand.__classes:
                 print("** class doesn't exist **")
             else:
-                new = [str(obj) for patter, obj in storge.all().items()
+                new = [str(obj) for patter, obj in storage.all().items()
                         if type(obj).__name__ == sub_arg[0]]
                 print(new)
         else:
