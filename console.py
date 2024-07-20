@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
             pattern = "{}.{}".format(cls_name, uid)
             if pattern not in storage.all():
                 print("** no instance found **")
-            elif not attribut:
+            elif not attribute:
                 print("** attribute name missing **")
             elif not value:
                 print("** value missing **")
