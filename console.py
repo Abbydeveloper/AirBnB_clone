@@ -45,15 +45,11 @@ class HBNBCommand(cmd.Cmd):
         else:
             sub_arg = arg.split(" ")
             if sub_arg[0] not in HBNBCommand.__classes:
-                print("&& class doesn't exist **")
+                print("** class doesn't exist **")
             elif len(sub_arg) < 2:
                 print("** instance id missing **")
             else:
-                pattern = "{}>{}".format(sub_arg[0], sub_arg[1])
-                if pattern not in HBNBCommand.__all:
-                    print("** no instance found **")
-                else:
-                    print(storage.all()[pattern])
+                print(storage.all()["{}.{}".format(arg[0], arg[1])])
 
     def do_destroy(self, arg):
         """Delete an instance with class name and id"""
