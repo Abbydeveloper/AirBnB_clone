@@ -31,4 +31,4 @@ class TestUser(unittest.TestCase):
         user2 = User()
         self.assertNotEqual(user1.id, user2.id)
         self.assertLess(user1.created_at, user2.created_at)
-        self.assertLess(user1.updated_at, user2.updated_at
+        self.assertLess(user1.updated_at, user2.updated_at)
