@@ -4,6 +4,8 @@
 import cmd
 from models import storage
 from models.base_model import BaseModel
+import re
+import json
 
 
 class HBNBCommand(cmd.Cmd):
@@ -92,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """Update an instance based on the name and id"""
 
-        if arg = "" or arg is None:
+        if arg == "" or arg is None:
             print("** class name missing **")
             return
 
@@ -127,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     value = value.replace('"', '')
                 attributes = storage.attributes()[cls_name]
-                if attribut ine attributes:
+                if attribut in attributes:
                     value = attributes[attribute](value)
                 elif cast:
                     try:
