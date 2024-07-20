@@ -129,7 +129,8 @@ class HBNBCommand(cmd.Cmd):
                         cast = int
                 else:
                     value = value.replace('"', '')
-                attributes = storage.all().__class__.__dict__.keys()                if attribute in attributes:
+                attributes = storage.all().__class__.__dict__.keys()
+                if attribute in attributes:
                     value = attributes[attribute](value)
                 elif cast:
                     try:
@@ -138,7 +139,7 @@ class HBNBCommand(cmd.Cmd):
                         pass
                 setattr(storage.all()[pattern], attribute, value)
                 storage.all()[pattern].save()
-               """ obj = storage.all()["{}.{}".format(arg[0], arg[1])]
+                """ obj = storage.all()["{}.{}".format(arg[0], arg[1])]
                 if attribute in obj.__"""
 
 
