@@ -25,4 +25,4 @@ class TestState(unittest.TestCase):
         state2 = State()
         self.assertNotEqual(state1.id, state2.id)
         self.assertLess(state1.created_at, state2.created_at)
-        self.assertLess(stae1.updated_at, state2.updated_at)
+        self.assertLess(state1.updated_at, state2.updated_at)
