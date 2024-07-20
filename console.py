@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     value = value.replace('"', '')
                 attributes = storage.attributes()[cls_name]
-                if attribut in attributes:
+                if attribute in attributes:
                     value = attributes[attribute](value)
                 elif cast:
                     try:
