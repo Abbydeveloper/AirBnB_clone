@@ -68,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
                 if pattern not in storage.all():
                     print("** no instance found **")
                 else:
-                   print(storage.all()["{}.{}".format(sub_arg[0], sub_arg[1])])
+                    print(storage.all()["{}.{}".format(sub_arg[0], sub_arg[1])])
 
     def do_destroy(self, arg):
         """Delete an instance with class name and id"""
@@ -98,7 +98,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             else:
                 new = [str(obj) for patter, obj in storage.all().items()
-                        if type(obj).__name__ == sub_arg[0]]
+                       if type(obj).__name__ == sub_arg[0]]
                 print(new)
         else:
             f_list = [str(obj) for pattern, obj in storage.all().items()]
