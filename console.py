@@ -71,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 pattern = "{}.{}".format(sub_arg[0], sub_arg[1])
                 if pattern not in storage.all():
-                    print("** not instance found **")
+                    print("** no instance found **")
                 else:
                     del storage.all()[pattern]
                     storage.save()
