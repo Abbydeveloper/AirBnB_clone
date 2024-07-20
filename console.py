@@ -120,6 +120,7 @@ class HBNBCommand(cmd.Cmd):
             elif not value:
                 print("** value missing **")
             else:
+
                 cast = None
                 if not re.search('^".*"$', value):
                     if '.' in value:
@@ -128,8 +129,7 @@ class HBNBCommand(cmd.Cmd):
                         cast = int
                 else:
                     value = value.replace('"', '')
-                attributes = HBNBCommand.__attributes[cls_name]
-                if attribute in attributes:
+                attributes = storage.all().__class__.__dict__.keys()                if attribute in attributes:
                     value = attributes[attribute](value)
                 elif cast:
                     try:
@@ -138,6 +138,8 @@ class HBNBCommand(cmd.Cmd):
                         pass
                 setattr(storage.all()[pattern], attribute, value)
                 storage.all()[pattern].save()
+               """ obj = storage.all()["{}.{}".format(arg[0], arg[1])]
+                if attribute in obj.__"""
 
 
 if __name__ == "__main__":
