@@ -41,6 +41,27 @@ class HBNBCommand(cmd.Cmd):
         print("")
         return True
 
+
+    def defaule(self, arg):
+
+        arg_obj = {
+            "all": self.do_all,
+            "show": self.do_show,
+            "destroy": self.do_destroy,
+            "update": self.do_update
+                }
+        match = re.search(r'\.', arg)
+        if match is not None:
+            sub_arg = [arg[:match.span()[0]], arg[match.span()[1]:]]
+            match = re.search(r'\((.*?)\)', sub_arg[1])
+            if mattch is not None:
+                cmd = [sub_arg[1][:match.span()[0]], match.group()[1:-1]]
+                if cmd[0] in arg_obj.keys():
+                    call = "{} {}".format(sub_arg[0], cmd[1])
+                    return arg_obj[cmd[0]](call)
+        print("*** Unknown syntax: {}".format(arg))
+        return false
+
     def do_create(self, arg):
         """Create new BaseModel instance"""
 
