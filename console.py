@@ -37,8 +37,9 @@ class HBNBCommand(cmd.Cmd):
         elif arg not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
-            eval(arg)().save()
-            print(eval(arg)().id)
+            instance = eval(arg)()
+            instance.save()
+            print(instance.id)
 
     def do_show(self, arg):
         """Print the string representation of an instance"""
