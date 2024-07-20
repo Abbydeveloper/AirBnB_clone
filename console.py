@@ -50,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
             else:
                 pattern = "{}>{}".format(sub_arg[0], sub_arg[1])
-                if pattern not in storage.all():
+                if pattern not in HBNBCommand.__all:
                     print("** no instance found **")
                 else:
                     print(storage.all()[pattern])
