@@ -11,6 +11,7 @@ from models.city import City
 from models.place import Place
 from models.review import Review
 import re
+import shlex
 import json
 
 
@@ -180,12 +181,23 @@ class HBNBCommand(cmd.Cmd):
 
     def do_count(self, arg):
 
-        sub_arg = parse(arg)
+        objects = storage.all()
+        cmds = shlex.split(arg)
         count = 0
-        for obj in storage.all().values():
-            if sub_arg[0] == obj.__class__.__name__:
+        if arg:
+            class_name = cmds[0]
+
+        if not cmds:
+            print('** class name missing **')
+            return
+
+        if class_name not in self.__classes:
+            print('** invalid class name **')
+            return
+        for obj in objects.values():
+            if obj.__class__.__name__ == class_name:
                 count += 1
-        print(count)
+        print (count)
 
 
 if __name__ == "__main__":
