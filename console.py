@@ -42,19 +42,20 @@ class HBNBCommand(cmd.Cmd):
         return True
 
 
-    def defaule(self, arg):
+    def default(self, arg):
 
         arg_obj = {
             "all": self.do_all,
             "show": self.do_show,
             "destroy": self.do_destroy,
-            "update": self.do_update
+            "update": self.do_update,
+            "count": self.do_update
                 }
-        match = re.search(r'\.', arg)
+        match = re.search(r"\.", arg)
         if match is not None:
             sub_arg = [arg[:match.span()[0]], arg[match.span()[1]:]]
             match = re.search(r'\((.*?)\)', sub_arg[1])
-            if mattch is not None:
+            if match is not None:
                 cmd = [sub_arg[1][:match.span()[0]], match.group()[1:-1]]
                 if cmd[0] in arg_obj.keys():
                     call = "{} {}".format(sub_arg[0], cmd[1])
