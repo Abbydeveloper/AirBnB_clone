@@ -49,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
             "show": self.do_show,
             "destroy": self.do_destroy,
             "update": self.do_update,
-            "count": self.do_show
+            "count": self.do_count
                 }
         match = re.search(r"\.", arg)
         if match is not None:
@@ -184,7 +184,7 @@ class HBNBCommand(cmd.Cmd):
         count = 0
         for obj in storage.all().values():
             if sub_arg[0] == obj.__class__.__name__:
-                count += `
+                count += 1
         print(count)
 
 
